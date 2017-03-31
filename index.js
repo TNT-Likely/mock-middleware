@@ -16,7 +16,7 @@ module.exports = function(config) {
     var match = router.search(route, req.method)
 
     //if match file's extension not js or json , return next()
-    if (!utils.contains(config.mockExts, path.extname(match.file)))
+    if (!(match && match.file) || !utils.contains(config.mockExts, path.extname(match.file)))
       return next()
 
     var ds = new DataSet(
