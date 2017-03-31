@@ -3,15 +3,15 @@ mock middleware for express
 
 ## Quick Start 
 
-Install mock-moddleware in project root .
+Install mock-middlewares in project root .
 
 ```
-$ npm install mock-middleware --save
+$ npm install mock-middlewares --save
 ```
 
 ```js
 var express = require('express')
-var middleware = require('mock-middleware')
+var middleware = require('mock-middlewares')
 
 var app = express()
 
@@ -51,7 +51,7 @@ Sample:
 module.exports = {
     // set json api with a json/js file in mock folder
     'POST::/test':         'mock::test.js'
-    
+
 }
 ```
 the rule is `'[method]::[route_url]': '[template_file]'`.

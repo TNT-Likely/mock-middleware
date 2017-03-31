@@ -1,6 +1,6 @@
 {
-  "name": "mock-middleware",
-  "version": "0.1.0",
+  "name": "mock-middlewares",
+  "version": "0.1.1",
   "description": "mock middleware for express",
   "main": "index.js",
   "scripts": {
