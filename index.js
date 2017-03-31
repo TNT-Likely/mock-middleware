@@ -15,6 +15,11 @@ module.exports = function(config) {
     var route = req.path
     var match = router.search(route, req.method)
 
+    req._search = {
+      route: route,
+      match: match
+    }
+
     //if match file's extension not js or json , return next()
     if (!(match && match.file) || !utils.contains(config.mockExts, path.extname(match.file)))
       return next()
