@@ -49,6 +49,10 @@ module.exports = function(config) {
       delete data['$$statusCode']
     }
 
+    //DEFAULT ALLOW CORS
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    res.setHeader('Access-Control-Allow-Methods', '*')
+
     //set response header
     if (data.$$header) {
       Object.keys(data.$$header).forEach(function(key) {
@@ -58,13 +62,7 @@ module.exports = function(config) {
     }
 
     setTimeout(function() {
-      if (req.query.callback) {
-        res.setHeader('Access-Control-Allow-Origin', '*')
-        res.setHeader('Access-Control-Allow-Methods', '*')
-        res.status(statusCode).jsonp(data)
-      } else {
-        res.status(statusCode).json(data)
-      }
+      res.status(statusCode).json(data)
     }, delay)
 
   }
