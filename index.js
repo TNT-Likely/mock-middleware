@@ -29,11 +29,7 @@ module.exports = function(config) {
       config.mockExts
     )
 
-    var data = ds.get(match.file, {
-      params: match.params,
-      query: req.query,
-      body: req.body
-    })
+    var data = ds.get(match.file, req);
 
     //response delay
     var delay = 0
